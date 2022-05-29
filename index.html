@@ -17,26 +17,20 @@
         <div class="row">
             <div class="col">
                 <h1>Bikes</h1>
-                <thead>
-                    <tr>
-                        <th>All bikes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="active" v-for="bike in bikes">
-                        <td>
-                            {{ bike }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            {{ getAllBikes() }}
-                        </td>
-
-                    </tr>
-                </tbody>
+                
+                    <table id="getBike" v-if="bikes.length > 0">
+                        <tr>
+                            <th>All bikes</th>
+                        </tr>
+                        <tr v-for="bike in bikes">
+                            <td>
+                                {{ bike }}
+                            </td>
+                        </tr>
+                    </table>
             </div>
         </div>
+    </div>
         <!-- Javascript-reference -->
         <script src="script.js"></script>
 </body>

@@ -8,6 +8,11 @@ const app = Vue.createApp({
             
         }
     },
+    created() { // Livcyklus-metoder, der står inde i created(), 
+        //bliver kaldt ved appens "fødsel", aka start, når programmet starter køre metoden
+        this.getAllBikes()
+
+    },
     methods: {
         getAllBikes(){ //hent alle cykler
           this.getAllBikesHelper(baseUrl)
@@ -23,6 +28,9 @@ const app = Vue.createApp({
                 alert(ex.message) //fejlmeddelelse i tilfælde af noget går galt
             }
         },
+        created(){
+
+        }
     }
 
 }).mount("#app") //her bliver appen mounted
