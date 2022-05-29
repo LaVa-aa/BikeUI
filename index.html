@@ -2,28 +2,43 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Bootstrap -->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css%22%3E">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js%22%3E"></script>
-  
-   <script src="https://unpkg.com/vue@next%22%3E"></script>
-   <!--Own CSS-->
-   <link rel="stylesheet" href="style.css">
-   <!--Icon links-->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E">
-    <title> Bike </title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!---Axios--->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <title>Bikes</title>
 </head>
 
 <body>
     <div id="app" class="container">
         <div class="row">
             <div class="col">
+                <h1>Bikes</h1>
+                <thead>
+                    <tr>
+                        <th>All bikes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active" v-for="bike in bikes">
+                        <td>
+                            {{ bike }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{ getAllBikes() }}
+                        </td>
+
+                    </tr>
+                </tbody>
             </div>
         </div>
-     <!-- Javascript-reference -->
-     <script src="script.js"></script>
+        <!-- Javascript-reference -->
+        <script src="script.js"></script>
 </body>
+
 </html>
