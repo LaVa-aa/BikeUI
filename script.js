@@ -5,7 +5,12 @@ const app = Vue.createApp({
     data() { // appens værdier defineres
         return {
             bikes: [], //tomot array der kan indeholde alle cykler
-            
+            idNr: "",
+            error: null,
+            getBikeData: "",
+            getMessage: "",
+
+
         }
     },
     created() { // Livcyklus-metoder, der står inde i created(), 
@@ -28,9 +33,16 @@ const app = Vue.createApp({
                 alert(ex.message) //fejlmeddelelse i tilfælde af noget går galt
             }
         },
-        created(){
-
-        }
+        async getById(){
+            const url = baseUrl + "/" + this.id
+            try{
+                const response = await axios.get(url)
+                this.getBikeData = response.data
+                this.getMessage = response.status + " " + response.statusText
+            }catch (ex) {
+                alert(ex.message)
+            }
+        },
     }
 
 }).mount("#app") //her bliver appen mounted

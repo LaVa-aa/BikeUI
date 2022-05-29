@@ -28,7 +28,12 @@
                             </td>
                         </tr>
                     </table>
-            </div>
+                    <h3>Indtast et ID: </h3>
+                    <input v-model.number="id" placeholder="Id nr..." type="number" />
+                    <button class="btn btn-primary" v-on:click="getById()">Search on ID</button>
+                    <br>
+                    {{ getBikeData }}    
+                </div>
         </div>
     </div>
         <!-- Javascript-reference -->
